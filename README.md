@@ -1,24 +1,30 @@
 # AI Customer Support Assistant (RAG)
 
-## Overview
-This project is a basic AI-powered customer support assistant built using a RAG pipeline.
-
-It answers user queries based on uploaded company documents.
+This project is a simple Retrieval-Augmented Generation (RAG) application.
 
 ## Features
-- Document-based question answering
-- Retrieval of relevant content
-- LLM-based response generation
-- Simple user interface
+- Upload PDF documents
+- Ask questions based on document
+- Uses embeddings + FAISS for retrieval
+- Generates answers using LLM
 
 ## Tech Stack
 - Python
 - Streamlit
+- Sentence Transformers
 - FAISS
-- Groq API
+- OpenAI API
 
-## Status
-🚧 Currently building core RAG functionality.
+## How it works
+1. Extract text from PDF
+2. Split into chunks
+3. Convert chunks into embeddings
+4. Store in FAISS index
+5. Retrieve relevant chunks based on query
+6. Send context + query to LLM
+7. Display answer
 
-## Goal
-To simulate a real-world customer support chatbot using AI and document retrieval.
+## Run the app
+```bash
+pip install -r requirements.txt
+streamlit run app.py
